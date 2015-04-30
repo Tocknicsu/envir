@@ -1,5 +1,5 @@
 # vim
-my vim setting
+my vim setting for ubuntu only
 
 using:
 
