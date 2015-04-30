@@ -7,6 +7,6 @@ wget https://raw.githubusercontent.com/Tocknicsu/vim/master/.vimrc ~/.vimrc
 wget https://raw.githubusercontent.com/Tocknicsu/vim/master/.ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe
-./install --clang-complete
+./install.sh --clang-complete
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 sudo chsh -s /bin/zsh
