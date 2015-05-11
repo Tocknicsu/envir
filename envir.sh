@@ -10,3 +10,4 @@ cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-complete
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 sudo chsh -s /usr/bin/zsh
+source ~/.zshrc
