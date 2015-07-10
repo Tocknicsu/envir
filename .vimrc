@@ -14,7 +14,6 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 filetype plugin indent on     " required
 
-
 "airline config
 set laststatus=2
 let g:airline_powerline_fonts=1
@@ -34,24 +33,23 @@ map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
 set t_Co=256
+set term=screen-256color
 set number
 map <F5> :NERDTreeTabsToggle <CR>
 
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-"set expandtab
+set expandtab
 
-"so $VIMRUNTIME/mswin.vim
-"behave mswin
 
 set wrap
 set showcmd
 colorscheme torte
-map <F2> :w <CR> :call OP() <CR> 
-"map <F2> :w <CR> :!gedit "%" <CR> <ESC>
-map <F8> :!~/.vim/menu.sh <CR>
-map <F9> :w <CR> :call CP_R() <CR> <ESC>
+map  <F2> :w <CR> :call OP() <CR> 
+map! <F2> <ESC> :w <CR> :call OP() <CR> <ESC>
+map  <F9> :w <CR> :call CP_R() <CR> <ESC>
+map! <F9> <ESC> :w <CR> :call CP_R() <CR> <ESC>
 function CP_R()
 
 	if( &ft == 'cpp') 
@@ -80,3 +78,5 @@ endfunction
 function OP()
 	execute '!$COLORTERM -x gedit ' . "%" . ";"
 endfunction
+
+
