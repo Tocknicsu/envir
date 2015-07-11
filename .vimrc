@@ -50,9 +50,16 @@ map  <F2> :w <CR> :call OP() <CR>
 map! <F2> <ESC> :w <CR> :call OP() <CR> <ESC>
 map  <F9> :w <CR> :call CP_R() <CR> <ESC>
 map! <F9> <ESC> :w <CR> :call CP_R() <CR> <ESC>
+map  <HOME> ^
+map! <HOME> <ESC>^i
+map  <ESC>OH <HOME>
+map! <ESC>OH <HOME>
+map  <END> $
+map  <ESC>OF <END>
+map! <ESC>OF <ESC><END>a
 function CP_R()
 
-	if( &ft == 'cpp') 
+	if( &ft == 'cpp')
 		let cpl = 'g++ -w -o "%:r.exe" -std=c++11 "%"' | let exc = '"./%:r.exe"'
 	elseif( &ft == 'c')
 		let cpl = 'gcc -w -o "%:r" -std=c99 "%"' | let exc = '"./%:r"'
@@ -78,5 +85,4 @@ endfunction
 function OP()
 	execute '!$COLORTERM -x gedit ' . "%" . ";"
 endfunction
-
 
