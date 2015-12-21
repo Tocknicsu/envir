@@ -46,10 +46,11 @@ set expandtab
 set wrap
 set showcmd
 colorscheme torte
-map  <F2> :w <CR> :call OP() <CR> 
-map! <F2> <ESC> :w <CR> :call OP() <CR> <ESC>
-map  <F9> :w <CR> :call CP_R() <CR> <ESC>
-map! <F9> <ESC> :w <CR> :call CP_R() <CR> <ESC>
+map  <F2> :w<CR>:call OP()<CR> 
+map! <F2> <ESC>:w<CR>:call OP()<CR><ESC>
+map  <F9> :w<CR>:call CP_R(0)<CR><ESC>
+map! <F9> <ESC>:w<CR>:call CP_R(0)<CR><ESC>
+map  <F10> :w<CR>:call CP_R(1)<CR><ESC>
 map  <HOME> ^
 map! <HOME> <ESC>^i
 map  <ESC>OH <HOME>
@@ -57,19 +58,22 @@ map! <ESC>OH <HOME>
 map  <END> $
 map  <ESC>OF <END>
 map! <ESC>OF <ESC><END>a
-function CP_R()
+function CP_R(file_in)
 
 	if( &ft == 'cpp')
 		let cpl = 'g++ -w -o "%:r.exe" -std=c++11 "%"' | let exc = '"./%:r.exe"'
 	elseif( &ft == 'c')
-		let cpl = 'gcc -w -o "%:r" -std=c99 "%"' | let exc = '"./%:r"'
+		let cpl = 'gcc -w -o "%:r" -std=c99 "%"' | let exc = '"./%:r.exe"'
 	elseif( &ft == 'java')
 		let cpl = 'javac "%"' | let exc = 'java "%:r"'
 	elseif( &ft == 'python')
 		let exc = 'python3 "%"'
 	endif
+    if a:file_in
+        let exc=exc.' < "./%:r.in"'
+    endif
+    let pause = 'printf "Press any key to continue..." && read -n 1 && exit'
 
-	let pause = 'printf "Press any key to continue..." && read -n 1 && exit'
 	if !exists('exc')
 		echo 'Can''t compile this filetype...'
 		return
@@ -79,7 +83,7 @@ function CP_R()
 	else
 		let cp_r = 'time ' . exc
 	endif
-	execute '!$COLORTERM -x bash -c ''' . cp_r . ';' . pause . ';exec bash'''
+	execute '!clear;' . cp_r . ';' . pause
 endfunction
 
 function OP()
