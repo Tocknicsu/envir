@@ -9,5 +9,5 @@ vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-complete
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
-sudo chsh -s /usr/zsh
+sudo chsh -s `which zsh`
 source ~/.zshrc
