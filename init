@@ -1,4 +1,5 @@
-service sshd start
+service ssh start
+service postgresql start
 while [ 1 ]
 do
     sleep 1
