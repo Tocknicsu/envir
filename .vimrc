@@ -12,6 +12,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'bigzhu/html5.vim'
+Plugin 'kien/ctrlp.vim'
 filetype plugin indent on     " required
 
 "airline config
