@@ -1,7 +1,7 @@
 # zsh vim for ubuntu
 
 sudo apt update -y
-sudo apt install -y zsh vim git curl python3
+sudo apt install -y zsh vim git curl python3 python3-pip
 # install zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
