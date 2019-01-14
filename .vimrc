@@ -7,12 +7,7 @@ Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'bigzhu/html5.vim'
-Plugin 'kien/ctrlp.vim'
 filetype plugin indent on     " required
 
 "airline config
@@ -20,12 +15,6 @@ set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#buffer_nr_show=1
-
-"youcompltememe config
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_key_invoke_completion = '<c-\>' 
-set completeopt=menuone
 
 "vim-easymotion config
 map  / <Plug>(easymotion-sn)
@@ -36,13 +25,11 @@ map  N <Plug>(easymotion-prev)
 set t_Co=256
 set term=screen-256color
 set number
-map <F5> :NERDTreeTabsToggle <CR>
 
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-
 
 set wrap
 set showcmd
