@@ -7,7 +7,7 @@ wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 wget https://raw.githubusercontent.com/Tocknicsu/envir/master/.zshrc -O ~/.zshrc
-sduo chsh -s `which zsh`
+sduo chsh $USER -s `which zsh`
 
 # install vim
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
