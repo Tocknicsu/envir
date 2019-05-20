@@ -4,7 +4,7 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y zsh vim git curl python3 python3-pip
 # install zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone git://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 wget https://raw.githubusercontent.com/Tocknicsu/envir/master/.zshrc -O ~/.zshrc
 sduo chsh $USER -s `which zsh`
